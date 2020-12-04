@@ -1,0 +1,14 @@
+.header{
+  grid-area: h;
+  background-color: bisque;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo{
+  height: 100%;
+}
+
+.img{
+  height: 100%;
+}

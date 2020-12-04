@@ -1,0 +1,4 @@
+.friends__body{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+}

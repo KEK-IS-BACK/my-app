@@ -1,0 +1,21 @@
+.user{
+    display: flex;
+    justify-content: space-between;
+}
+
+.userPreview{
+    width: 25%;
+}
+
+.userBody{
+    width: 75%;
+}
+
+.userImage{
+    max-width: 200px;
+}
+
+.userImage > img{
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,32 @@
+.dialogs{
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  padding: 10px;
+  gap: 10px;
+}
+
+.chats{
+  border: 1px solid brown;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.chats__item{
+  margin: 0 0 10px 0;
+  border: 1px solid brown;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.messages{
+  border: 1px solid brown;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.message{
+  margin: 0 0 10px 0;
+  border: 1px solid brown;
+  border-radius: 10px;
+  padding: 10px;
+}
