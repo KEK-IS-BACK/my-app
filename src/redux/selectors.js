@@ -27,3 +27,9 @@ export const getBtnFolllowDisabled = state => {
 export const getAuthUserId = state => {
   return state.auth.id
 }
+
+///////////Profile////////////
+
+export const getProfilePhotos = state => {
+  return state.profilePage.userProfile.photos
+}

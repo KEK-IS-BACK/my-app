@@ -7,14 +7,23 @@ import {compose} from "redux";
 import {getAuthUserId} from "../../redux/selectors";
 
 class ProfileContainer extends React.Component {
-
-  componentDidMount() {
+  requestUserProfile = () => {
     let userId = this.props.match.params.userId || this.props.authUserId || null
     if(userId !== null) {
       this.props.getProfile(userId)
       this.props.getStatus(userId)
     } else {
       this.props.history.push('/login')
+    }
+  }
+
+  componentDidMount() {
+    this.requestUserProfile()
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(prevProps.match.params.userId !== this.props.match.params.userId ){
+      this.requestUserProfile()
     }
   }
 
