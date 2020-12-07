@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter, Route} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import './App.css';
 import Sidebar from './components/Sidebar/Sidebar';
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
@@ -14,6 +14,9 @@ import {connect} from "react-redux";
 import {authMe} from "./redux/auth-reducer";
 import Preloader from "./components/common/Preloader";
 import {initializeApp} from "./redux/initial-reduce";
+import Footer from "./components/Footer/Footer";
+import {getIsAuth} from "./redux/selectors";
+
 
 class App extends React.Component {
   componentDidMount() {
@@ -24,30 +27,36 @@ class App extends React.Component {
 
   render() {
 
-    if(!this.props.isAppInitialized) return <Preloader/>
+    if (!this.props.isAppInitialized) return <Preloader/>
 
     return (
-      <HashRouter>
-        <div className="app-wrapper">
-          <HeaderContainer/>
-          <Sidebar sidebar={this.props.store.getState().sidebar}/>
-          <div className='app-wrapper__content'>
-            <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
-            <Route path='/dialogs' render={() => <DialogsContainer/>}/>
-            <Route path='/login' render={() => <LoginContainer/>}/>
-            <Route path='/users' render={() => <UsersContainer/>}/>
-            <Route path='/music' render={() => <Music/>}/>
-            <Route path='/news' render={() => <News/>}/>
-            <Route path='/settings' render={() => <Settings/>}/>
+        <div className="app">
+          <HeaderContainer className='app__header'/>
+          <div className="app__content">
+            <Switch>
+              <Route path='/login' render={() => <LoginContainer/>}/>
+              <div className="app__body">
+                <Sidebar sidebar={this.props.store.getState().sidebar}/>
+                <main className='app__main'>
+                  <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+                  <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                  <Route path='/users' render={() => <UsersContainer/>}/>
+                  <Route path='/music' render={() => <Music/>}/>
+                  <Route path='/news' render={() => <News/>}/>
+                  <Route path='/settings' render={() => <Settings/>}/>
+                </main>
+              </div>
+            </Switch>
           </div>
+          <Footer className='app__footer'/>
         </div>
-      </HashRouter>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  isAppInitialized: state.initial.isAppInitialized
+  isAppInitialized: state.initial.isAppInitialized,
+  isAuth: getIsAuth(state)
 })
 
 export default connect(mapStateToProps, {authMe, initializeApp})(App);

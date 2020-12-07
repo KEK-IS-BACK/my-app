@@ -1,0 +1,97 @@
+.cardPhoto{
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    border: red;
+    height: min-content;
+    box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
+}
+
+.profilePhoto{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.profilePhoto__img{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.profilePhoto__img > img{
+    width: 100%;
+}
+
+.profilePhoto__cardButtons{
+    bottom: -35%;
+    position: absolute;
+    background: rgba(29,32,34,.7);
+    width: 100%;
+    padding: 15px;
+    transition: all ease .5s;
+}
+
+.profilePhoto:hover > .profilePhoto__cardButtons{
+    top: unset;
+    bottom: 0;
+    transition: all ease .5s;
+}
+
+.profilePhoto:hover > .btnDeletePhoto{
+    opacity: 1;
+    transition: opacity ease .5s;
+}
+
+#updateProfilePhotoInput{
+    display: none;
+}
+
+.labelUpdateProfilePhoto{
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    transition: color ease .4s;
+}
+
+.labelUpdateProfilePhoto:hover{
+    color: rgb(237,238,240);
+    transition: color ease .4s;
+}
+
+.btnDeletePhoto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    opacity: 0;
+    transition: opacity ease .5s;
+    cursor: pointer;
+}
+
+.btnDeletePhoto>div::before,
+.btnDeletePhoto>div::after{
+    content: '';
+    display: block;
+    width: 14px;
+    height: 1px;
+    background-color: black;
+}
+
+.btnDeletePhoto>div::before{
+    transform: rotate(-45deg);
+}
+
+.btnDeletePhoto>div::after{
+    transform: rotate(45deg);
+}

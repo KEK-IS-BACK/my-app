@@ -1,0 +1,97 @@
+.account {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+}
+
+.account__body {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color ease .5s;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.account__body:hover {
+  background-color: rgba(237, 238, 240, .75);
+  transition: background-color ease .5s;
+}
+
+.account__body:visited {
+  color: unset;
+}
+
+.account__login {
+  margin: 0 8px 0 0;
+}
+
+.account__photo {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 8px 0 0;
+}
+
+.account__settings {
+  align-self: stretch;
+  width: 20px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color ease .5s;
+  border-radius: 5px;
+}
+
+.account__settings:hover {
+  background-color: rgba(237, 238, 240, .75);
+  transition: background-color ease .5s;
+}
+
+.account__settingsArrow {
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(135deg);
+}
+
+.account__settingsBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #4C9A95;
+  border: 1px solid rgb(237,238,240);
+  opacity: 0;
+  transition: opacity ease .5s;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.account__settingsBody.active {
+  opacity: 1;
+  transition: opacity ease .5s;
+}
+
+.account__settingsBtn {
+  border: none;
+  outline: none;
+  background-color: unset;
+  cursor: pointer;
+  transition: background-color ease .4s;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.account__settingsBtn:hover {
+  background-color: rgba(237, 238, 240, .75);
+  transition: background-color ease .4s;
+}

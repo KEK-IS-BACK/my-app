@@ -1,14 +1,51 @@
-.header{
-  grid-area: h;
-  background-color: bisque;
+.header {
+  background-color: #4C9A95;
+  padding: 0 15px;
+}
+
+.header__body {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
-.logo{
+.logo {
   height: 100%;
+  width: 200px;
+  white-space: nowrap;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-.img{
-  height: 100%;
+.logo:visited {
+  text-decoration: none;
+  color: black;
 }
+
+.btnLogin{
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  transition: background-color ease .4s;
+}
+
+.btnLogin:hover{
+  background-color: rgba(237, 238, 240, .75);
+  transition: background-color ease .4s;
+}
+
+.btnLogin__link{
+  text-decoration: none;
+
+}
+
+.btnLogin__link:visited {
+  color: unset;
+}
+

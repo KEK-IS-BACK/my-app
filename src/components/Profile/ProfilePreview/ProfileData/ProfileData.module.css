@@ -1,0 +1,10 @@
+.contact{
+  padding: 0 0 0 15px;
+}
+
+.profileInfo{
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
+  padding: 15px;
+}

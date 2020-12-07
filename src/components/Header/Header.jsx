@@ -1,23 +1,31 @@
 import styles from './Header.module.css'
 import {NavLink} from "react-router-dom";
+import Account from "./Account/Account";
 
 
 const Header = (props) => {
+
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <img src="https://purepng.com/public/uploads/large/purepng.com-coca-cola-logococa-colacokecarbonated-soft-drinksoft-drink-1411527233248xlp4z.png" alt='Logo' className={styles.img}/>
-      </div>
-      <div className={styles.header__login}>
-        {
-          props.isAuth
-            ? <div>
-                {props.login}
-                <button onClick={props.logout}>Logout</button>
+      <div className="container">
+        <div className={styles.header__body}>
+          <div>
+            <NavLink to='/' className={styles.logo}>Social Network</NavLink>
+          </div>
+          {
+            props.isAuth
+              ?
+              <Account smallPhoto={props.smallPhoto}
+                       login={props.login}
+                       logout={props.logout}/>
+              :
+              <div className={styles.btnLogin}>
+                <NavLink to='/login' className={styles.btnLogin__link}>
+                  Войти
+                </NavLink>
               </div>
-            : <NavLink to='/login'> Login </NavLink>
-        }
-
+          }
+        </div>
       </div>
     </header>
   );

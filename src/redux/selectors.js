@@ -24,12 +24,25 @@ export const getBtnFolllowDisabled = state => {
 
 /////////AUTH//////////
 
+export const getIsAuth = state => {
+  return state.auth.isAuth
+}
+
+
 export const getAuthUserId = state => {
   return state.auth.id
+}
+
+export const getCaptchaUrl = state => {
+  return state.auth.captchaUrl
 }
 
 ///////////Profile////////////
 
 export const getProfilePhotos = state => {
   return state.profilePage.userProfile.photos
+}
+
+export  const getSmallOwnerPhoto = state => {
+  return state.profilePage.ownerProfile? state.profilePage.ownerProfile.photos.small : undefined
 }

@@ -1,35 +1,37 @@
-.nav{
+.sidebar{
   box-sizing: border-box;
-  grid-area: s;
-  background-color: silver;
-  border: 1px solid black;
+  border: 1px solid #4C9A95;
+  border-radius: 25px;
   width: 100%;
   padding: 10px;
+  margin: 5px;
 }
 
-.nav__list{
+.sidebar__list{
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.nav__item{
+.sidebar__item{
   padding: 0;
   margin: 0;
 }
 
-.nav__item:hover > .nav__link{
-  color: aquamarine;
+.sidebar__item:hover > .sidebar__link{
+  color: #5E4D9D;
+  font-weight: 700;
 }
 
-.nav__link{
+.sidebar__link{
   font-size: 24px;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 .active{
-  color: orange;
+  color: #A66B32;
+  font-weight: 700;
 }
-.nav__item:last-child{
+.sidebar__item:last-child{
   margin: 20px 0 0 0;
 }
