@@ -57,13 +57,10 @@ export const authMe = () => async dispatch => {
 export const login = (email, pass, rememberMe, captcha) => async (dispatch, getState) => {
   const response = await authARI.login(email, pass, rememberMe, captcha)
   if (response.data.resultCode === 0) {
-    console.log('До авторизации')
-    await dispatch(authMe())
-    console.log('После авторизации, но профиль еще не установлен')
-    await dispatch(getProfile(getState().auth.id, true))
-    console.log('Профиль установлен')
+    dispatch(authMe())
+    dispatch(getProfile(getState().auth.id, true))
   } else {
-    if (response.data.resultCode === 10){
+    if (response.data.resultCode === 10) {
       dispatch(setCaptcha())
     }
     dispatch(stopSubmit('login', {_error: response.data.messages[0]}))

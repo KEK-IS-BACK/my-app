@@ -9,13 +9,13 @@ import News from "./components/News/News";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfilContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import LoginContainer from "./components/Login/LoginContainer";
 import {connect} from "react-redux";
 import {authMe} from "./redux/auth-reducer";
 import Preloader from "./components/common/Preloader";
 import {initializeApp} from "./redux/initial-reduce";
 import Footer from "./components/Footer/Footer";
 import {getIsAuth} from "./redux/selectors";
+import Login from "./components/Login/Login";
 
 
 class App extends React.Component {
@@ -34,7 +34,7 @@ class App extends React.Component {
           <HeaderContainer className='app__header'/>
           <div className="app__content">
             <Switch>
-              <Route path='/login' render={() => <LoginContainer/>}/>
+              <Route path='/login' render={() => <Login/>}/>
               <div className="app__body">
                 <Sidebar sidebar={this.props.store.getState().sidebar}/>
                 <main className='app__main'>
