@@ -1,22 +1,32 @@
 import React from 'react'
-import LoginForm from "./LoginForm";
+import LoginForm from "./LoginForm/LoginForm";
 import styles from "./Login.module.css"
+import {connect} from "react-redux";
+import {login, setCaptcha} from "../../redux/auth-reducer";
+import {getCaptchaUrl, getIsAuth} from "../../redux/selectors";
+import {Redirect} from "react-router-dom";
 
 
-export const Login = (props) => {
-  console.log('Update')
+const Login = (props) => {
+
+  if(props.isAuth) return <Redirect to='/profile' />
+
   return (
     <div className={styles.loginPage}>
       <div className={styles.loginPage__body}>
-        <div className={styles.loginForm}>
-          <h1 className={styles.loginForm__title}>Вход</h1>
-          <LoginForm onSubmit={props.onSubmit}
-                     captchaUrl={props.captchaUrl}
-                     className={styles.loginForm__body}/>
+        <LoginForm onSubmit={props.onSubmit}
+                   setCaptcha={props.setCaptcha}
+                   captchaUrl={props.captchaUrl}
+                   login={props.login}
+        />
         </div>
       </div>
-    </div>
   )
 }
 
-export default Login
+let mapStateToProps = (state) => ({
+  captchaUrl: getCaptchaUrl(state),
+  isAuth: getIsAuth(state)
+})
+
+export default connect(mapStateToProps,{login, setCaptcha})(Login)

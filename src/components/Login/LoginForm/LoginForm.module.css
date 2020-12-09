@@ -1,0 +1,57 @@
+
+.loginForm{
+    padding: 40px 50px;
+    border: 1px solid #4C9A95;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.loginForm__title{
+    text-align: center;
+    margin: 0 0 15px 0;
+}
+
+.loginForm__body{
+    display: grid;
+    row-gap: 10px;
+}
+
+.loginForm__rememberMe{
+    cursor: pointer;
+    user-select: none;
+}
+
+.loginForm__rememberMe:focus{
+    border: 2px solid #4C9A95;
+}
+
+.loginForm__rememberMe > input[type='checkbox'] {
+    outline: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.loginForm__rememberMe > input[type='checkbox']:focus {
+    border: 2px solid #4C9A95;
+}
+
+.loginForm__btnSubmit{
+    border: 1px solid #4C9A95;
+    background-color: unset;
+    outline: none;
+    padding: 15px 45px;
+    border-radius: 25px;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.loginForm__btnSubmit:hover{
+    background-color: rgba(76, 154, 149, .5);
+    transition: all .5s ease;
+}
+
+.loginForm__btnSubmit:disabled{
+    border-color: silver;
+    background-color: unset;
+    cursor: default;
+}

@@ -1,7 +1,15 @@
-.input{
-  border: 1px solid rgba(255, 204, 153, 1);
+.field{
+  position: relative;
+}
+
+.field__input{
+  width: 250px;
+  outline: none;
   border-radius: 25px;
   padding: 15px;
-  outline: none;
-  width: 300px;
+  border: 1px solid #4C9A95;
+}
+
+.field__input:focus{
+  border: 2px solid #4C9A95;;
 }
