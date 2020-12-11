@@ -30,11 +30,12 @@ class App extends React.Component {
     if (!this.props.isAppInitialized) return <Preloader/>
 
     return (
-        <div className="app">
-          <HeaderContainer className='app__header'/>
-          <div className="app__content">
-            <Switch>
-              <Route path='/login' render={() => <Login/>}/>
+      <div className="app">
+        <HeaderContainer className='app__header'/>
+        <div className="app__content">
+          <Switch>
+            <Route path='/login' render={() => <Login/>}/>
+            <div className='container'>
               <div className="app__body">
                 <Sidebar sidebar={this.props.store.getState().sidebar}/>
                 <main className='app__main'>
@@ -46,10 +47,11 @@ class App extends React.Component {
                   <Route path='/settings' render={() => <Settings/>}/>
                 </main>
               </div>
-            </Switch>
-          </div>
-          <Footer className='app__footer'/>
+            </div>
+          </Switch>
         </div>
+        <Footer className='app__footer'/>
+      </div>
     );
   }
 }

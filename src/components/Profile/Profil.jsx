@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Profile.module.css'
-import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import MyPosts from "./MyPosts/MyPosts";
 import Preloader from "../common/Preloader";
 import ProfilePreview from "./ProfilePreview/ProfilPreview";
 
@@ -12,12 +12,12 @@ const Profile = (props) => {
   }
 
   return (
-    <div>
+    <div className={styles.profilePage}>
       <ProfilePreview userProfile={props.userProfile}
                       status={props.status}
                       updateStatus={props.updateStatus}
                       updateProfileInfo={props.updateProfileInfo}/>
-      <MyPostsContainer store={props.store}/>
+      <MyPosts store={props.store}/>
     </div>
   );
 }

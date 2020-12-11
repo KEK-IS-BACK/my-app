@@ -1,0 +1,52 @@
+.contact{
+  padding: 0 0 0 15px;
+}
+
+.profileInfo{
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
+  padding: 15px;
+}
+
+.profileInfo__header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid silver;
+
+}
+
+.profileInfo__aboutMe{
+  padding: 15px;
+}
+
+.profileInfo__contacts{
+  padding: 15px;
+  border-bottom: 1px solid silver;
+}
+
+.profileInfo__lookingForAJob{
+  padding: 15px;
+}
+
+.profileInfo__lookingForAJobDescription{
+  margin: 15px 0 0 0;
+}
+
+.profileInfo__btnEdit{
+  outline: none;
+  border: 1px solid #4C9A95;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: unset;
+  cursor: pointer;
+  transition: background-color ease .4s;
+  margin: 0 0 0 15px;
+}
+
+.profileInfo__btnEdit:hover{
+  background-color: rgba(76, 154, 149, .75);
+  transition: background-color ease .4s;
+}

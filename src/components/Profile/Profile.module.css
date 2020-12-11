@@ -1,4 +1,11 @@
+.profilePage{
+  display: grid;
+  grid-template-areas: 'preview preview'
+                       'something posts';
+  grid-template-columns: 230px 1fr;
+  gap: 15px;
 
+}
 .background{
   width: 100%;
 }

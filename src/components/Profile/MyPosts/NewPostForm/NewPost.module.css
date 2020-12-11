@@ -1,0 +1,41 @@
+.newPost{
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 0 #d3d9de,0 0 0 1px #e7e8ec;
+}
+
+.newPost__textarea{
+  grid-area: textarea;
+  border: 1px solid #4C9A95;
+  border-radius: 5px;
+  resize: none;
+  outline: none;
+  width: 100%;
+  height: 100px;
+  padding: 15px;
+}
+
+.newPost__buttons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.newPost__btn{
+  border: 1px solid #4C9A95;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  transition: background-color ease .4s;
+}
+
+.newPost__btn:hover{
+  background-color:rgba(76, 154, 149, .75);
+  transition: background-color ease .4s;
+}
+
+.newPost__btnSubmit{
+  margin: 0 10px 0 0;
+}

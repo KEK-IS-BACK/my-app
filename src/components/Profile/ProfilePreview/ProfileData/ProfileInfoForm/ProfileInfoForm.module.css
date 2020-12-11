@@ -1,0 +1,51 @@
+.profileInfoForm{
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.profileInfo__field{
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 8px 0;
+  align-items: center;
+}
+
+.profileInfo__input{
+  border: 1px solid #4C9A95;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+.profileInfoForm__btn{
+  border: 1px solid #4C9A95;
+  background-color: transparent;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all ease .4s;
+  outline: none;
+}
+
+.profileInfoForm__btn:hover{
+  background-color: rgba(76, 154, 149, .75);
+  transition: all ease .4s;
+  cursor: pointer;
+}
+
+.profileInfoForm__btn:last-child{
+ margin: 0 0 0 5px;
+}
+
+
+.profileInfo__teaxtarea{
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #4C9A95;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+  outline: none;
+  resize: none;
+}

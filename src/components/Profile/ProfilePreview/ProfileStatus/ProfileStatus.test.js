@@ -1,4 +1,4 @@
-import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
+import ProfileStatusWithHooks from "./ProfileStatus";
 import {create} from 'react-test-renderer'
 
 describe("Test Status component", () => {
@@ -17,11 +17,9 @@ describe("Test Status component", () => {
   })
 
   test('On doubleClick should display input', () => {
-    const mock = jest.fn()
     const component = create(<ProfileStatusWithHooks status={'Hi'}/>)
     const instance = component.root
     const span = instance.findByType('span')
     span.simulate('doubleClick')
-
   })
 })

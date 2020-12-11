@@ -1,1 +1,7 @@
- 
+.posts{
+  grid-area: posts;
+  width: 100%;
+  border-radius: 5px;
+  display: grid;
+  gap: 15px;
+}

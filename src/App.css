@@ -1,5 +1,6 @@
 .container{
   max-width: 1140px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -26,7 +27,7 @@
 
 .app__main{
   border: 1px solid #4C9A95;
-  border-radius: 25px;
+  border-radius: 5px;
   margin: 5px;
   flex: 1 0 auto;
   padding: 15px;

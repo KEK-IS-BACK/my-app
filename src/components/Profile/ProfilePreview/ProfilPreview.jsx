@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './ProfilePreview.module.css'
-import ProfileDataContainer from "./ProfileData/ProfileData";
+import ProfileDataContainer from "./ProfileData/ProfileInfo";
 import ProfileCardPhoto from "./ProfileCardPhoto/ProfileCardPhoto";
 
 const ProfilePreview = (props) => {

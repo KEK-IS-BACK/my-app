@@ -1,4 +1,5 @@
 .profilePreview{
+  grid-area: preview;
   display: grid;
   grid-template-columns: min-content 1fr;
   column-gap: 15px;
