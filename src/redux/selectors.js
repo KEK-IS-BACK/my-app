@@ -44,5 +44,5 @@ export const getProfilePhotos = state => {
 }
 
 export  const getSmallOwnerPhoto = state => {
-  return state.profilePage.ownerProfile? state.profilePage.ownerProfile.photos.small : undefined
+  return state.profilePage.ownerProfile ? state.profilePage.ownerProfile.photos.small : undefined
 }

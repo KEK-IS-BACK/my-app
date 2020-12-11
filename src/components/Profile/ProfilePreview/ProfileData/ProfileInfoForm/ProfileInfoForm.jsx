@@ -27,8 +27,8 @@ const ProfileInfoForm = ({handleSubmit, contacts}) => {
         Контакты:
         {Object.keys(contacts).map(key => {
           return (
-            <div className={styles.profileInfo__field}>{key}:
-              <Field key={key} component='input'
+            <div key={key} className={styles.profileInfo__field}>{key}:
+              <Field component='input'
                      name={'contacts.' + key}
                      placeholder={' ' + key}
                      className={styles.profileInfo__input}/>

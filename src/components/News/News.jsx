@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './News.module.css'
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 const News = (props) => {
     return (
@@ -9,4 +10,4 @@ const News = (props) => {
     );
 }
 
-export default News;
+export default withAuthRedirect(News);

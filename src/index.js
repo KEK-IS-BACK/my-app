@@ -5,9 +5,11 @@ import store from "./redux/redux-store";
 import {Provider} from "react-redux";
 import "./index.css"
 import {HashRouter} from "react-router-dom";
+import {initializeApp} from "./redux/initial-reduce";
 
 
 let rerenderEntireTree = () => {
+  initializeApp()
   ReactDOM.render(
     <React.StrictMode>
       <HashRouter>

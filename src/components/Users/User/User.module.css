@@ -1,6 +1,11 @@
 .user{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #4C9A95;
+    padding: 10px;
 }
 
 .userPreview{

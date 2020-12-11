@@ -7,7 +7,7 @@ import {
   setCurrentPage,
   unfollow
 } from "../../redux/users-reducer";
-import Preloader from "../common/Preloader";
+import Preloader from "../common/Preloader/Preloader";
 import {
   getBtnFolllowDisabled,
   getCurrentPage,

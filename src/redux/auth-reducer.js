@@ -51,6 +51,8 @@ export const authMe = () => async dispatch => {
   let {id, login, email} = data.data
   if (data.resultCode === 0) {
     dispatch(setAuthUserData(id, login, email))
+  } else if (data.resultCode === 403){
+    dispatch(logout)
   }
 }
 
@@ -58,7 +60,7 @@ export const login = (email, pass, rememberMe, captcha) => async (dispatch, getS
   const response = await authARI.login(email, pass, rememberMe, captcha)
   if (response.data.resultCode === 0) {
     dispatch(authMe())
-    dispatch(getProfile(getState().auth.id, true))
+    await dispatch(getProfile(getState().auth.id, true))
   } else {
     if (response.data.resultCode === 10) {
       dispatch(setCaptcha())
@@ -73,6 +75,7 @@ export const logout = () => async dispatch => {
   if (response.data.resultCode === 0) {
     dispatch(deleteAuthUserData())
   }
+
 }
 
 export const setCaptcha = () => async dispatch => {

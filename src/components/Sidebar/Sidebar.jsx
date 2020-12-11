@@ -1,35 +1,21 @@
 import React from "react";
 import styles from './Sidebar.module.css'
-import {NavLink} from "react-router-dom";
-import Friends from "../Friends/Friends";
 import cn from 'classnames'
+import SidebarItem from "./SidebarItem/SidebarItem";
 
 
-const Sidebar = (props) => {
+const Sidebar = props => {
 
   return (
     <nav className={cn(styles.sidebar)}>
       <ul className={styles.sidebar__list}>
-        <li className={styles.sidebar__item}>
-          <NavLink to="/profile" activeClassName={styles.active} className={styles.sidebar__link}>Profile</NavLink>
-        </li>
-        <li className={styles.sidebar__item}>
-          <NavLink to="/dialogs" activeClassName={styles.active} className={styles.sidebar__link}>Messages</NavLink>
-        </li>
-        <li className={styles.sidebar__item}>
-          <NavLink to="/news" activeClassName={styles.active} className={styles.sidebar__link}>News</NavLink>
-        </li>
-        <li className={styles.sidebar__item}>
-          <NavLink to="/music" activeClassName={styles.active} className={styles.sidebar__link}>Music</NavLink>
-        </li>
-        <li className={styles.sidebar__item}>
-          <NavLink to="/users" activeClassName={styles.active} className={styles.sidebar__link}>Users</NavLink>
-        </li>
-        <li className={styles.sidebar__item}>
-          <NavLink to="/settings" activeClassName={styles.active} className={styles.sidebar__link}>Settings</NavLink>
-        </li>
+        <SidebarItem to='/profile' value='Профиль'/>
+        <SidebarItem to='/dialogs' value='Сообщения'/>
+        <SidebarItem to='/news' value='Новости'/>
+        <SidebarItem to='/music' value='Музыка'/>
+        <SidebarItem to='/users' value='Пользователи'/>
+        <SidebarItem to='/settings' value='Настройки'/>
       </ul>
-      <Friends friends={props.sidebar.friends}/>
     </nav>
   );
 }

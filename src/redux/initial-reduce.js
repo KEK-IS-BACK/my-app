@@ -22,13 +22,16 @@ const initialReducer = (state = initialState, action) => {
 export const initializeApp = () => async (dispatch, getState) => {
   await Promise.all([
     dispatch(authMe())
-  ])
+  ]).then(values => {
+    console.log(values)
+  })
+
   const state = getState()
   if(state.auth.isAuth) {
     await dispatch(getProfile(state.auth.id, true))
   }
+  console.log('Initial')
   dispatch({type: INITIALIZE_APP})
-  console.log("State проинизиализрован")
 }
 
 export default initialReducer

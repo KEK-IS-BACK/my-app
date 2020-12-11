@@ -1,15 +1,22 @@
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 import photo from "../../../assets/images/profilePhoto.jpg";
 import styles from './Account.module.css'
 import {useState} from "react";
 
 const Account = (props) => {
   const [isShowSettings, setIsShowSettings] = useState(false)
+  const history = useHistory()
 
   const showSettings = () => {
     setIsShowSettings(!isShowSettings)
   }
 
+  const logout = () => {
+    props.logout().then(() => {
+      history.push('/login')
+    })
+  }
+  console.log('Header')
   return (
     <div className={styles.account}>
       <NavLink to='profile/' className={styles.account__body}>
@@ -22,7 +29,7 @@ const Account = (props) => {
         <div className={styles.account__settingsArrow}></div>
       </div>
       <div className={`${styles.account__settingsBody} ${isShowSettings && styles.active}`}>
-        <button onClick={props.logout} className={styles.account__settingsBtn}>Выйти</button>
+        <button onClick={logout} className={styles.account__settingsBtn}>Выйти</button>
       </div>
     </div>
   )
