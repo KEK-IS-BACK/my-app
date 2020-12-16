@@ -5,3 +5,8 @@
 .openingSpeech li{
     padding: 0 0 0 5px;
 }
+
+.openingSpeech__login,
+.openingSpeech__password{
+    font-weight: 700;
+}
