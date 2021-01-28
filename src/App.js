@@ -16,7 +16,7 @@ import {getIsAuth} from "./redux/selectors";
 import Login from "./components/Login/Login";
 import Header from "./components/Header/Header";
 
-const App = ({initializeApp, isAppInitialized, store, isAuth}) => {
+const App = ({initializeApp, isAppInitialized, isAuth}) => {
 
   useEffect(() => {
     initializeApp()
